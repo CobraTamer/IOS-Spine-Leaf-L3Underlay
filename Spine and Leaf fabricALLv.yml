@@ -1,0 +1,143 @@
+---
+
+
+leaf1:
+ HostName: leaf1
+ HostIPv4Address: "192.168.2.1" #Loopback int management interface
+ Interfaces:
+  LACPPortGroup1:
+   InterfaceRange: GigabitEthernet0/20-34
+   channelgroup: "1"
+   PortType: No switchport
+   IPV4Address: "10.0.1.2"
+   Netmask: " 255.255.255.252"
+   IPV6Address: FD29:611:608:1A::/64 eui 64
+   Description1: Etherchannel Connection to spine1
+  LACPPortGroup2:
+   InterfaceRange: GigabitEthernet0/41-48
+   channelgroup: "6"
+   PortType: No switchport
+   IPV4Address: "10.0.2.10"
+   Netmask: " 255.255.255.252"
+   IPV6Address: FD29:611:608:2C::/64 eui 64
+   Description1: Etherchannel Connection to spine2
+ Dynamic Routing:
+  OSPF1:
+   OSPFprocessID: "1"
+   Area: "0"
+   ECMPmaximum-Paths: "2"
+ Vlans:
+  Vlan 10:
+   InterfaceIP: "172.16.10.1 255.255.255.0" 
+   Name: ManagementStation 
+  vlan 20: 
+   InterfaceIP: "172.16.20.1 255.255.255.0" 
+   Name: HypervisorsManagementESXi  
+  Vlan 30: 
+    InterfaceIP: "172.16.30.1 255.255.255.0" 
+    Name: PhysicalServeriLoManagement 
+  Vlan 40: 
+    InterfaceIP: "172.16.40.1 255.255.255.0" 
+    Name: VMWindowsServersFarm
+  Vlan 50: 
+    InterfaceIP: "172.16.50.1 255.255.255.0" 
+    Name: VMWindowsEnterpriseworkstation
+  Vlan 51: 
+    InterfaceIP: "172.16.51.1 255.255.255.0" 
+    Name: PhysicalWindowsWorkstation
+ 
+ 
+ 
+
+leaf2:
+ HostName: leaf2
+ HostIPv4Address: "192.168.2.2" #Loopback int management interface
+ Interfaces:
+  LACPPortGroup1:
+   InterfaceRange: GigabitEthernet1/0/33-47
+   channelgroup: "2"
+   PortType: No switchport
+   IPV4Address: "10.0.1.6"
+   Netmask: " 255.255.255.252"
+   IPV6Address: FD29:611:608:1B::/64 eui 64
+   Description1: Etherchannel Connection to spine1
+  LACPPortGroup2:
+   InterfaceRange: GigabitEthernet1/0/2-16
+   channelgroup: "4"
+   PortType: No switchport
+   IPV4Address: "10.0.2.2"
+   Netmask: " 255.255.255.252"
+   IPV6Address: FD29:611:608:2A::/64 eui 64
+   Description1: Etherchannel Connection to spine2
+ Dynamic Routing:
+  OSPF1:
+   OSPFprocessID: "1"
+   Area: "0"
+   ECMPmaximum-Paths: "2"
+ Vlans:
+  Vlan 10:
+   InterfaceIP: "172.16.10.1 255.255.255.0" 
+   Name: ManagementStation 
+  vlan 20: 
+   InterfaceIP: "172.16.20.1 255.255.255.0" 
+   Name: HypervisorsManagementESXi  
+  Vlan 30: 
+    InterfaceIP: "172.16.30.1 255.255.255.0" 
+    Name: PhysicalServeriLoManagement 
+  Vlan 40: 
+    InterfaceIP: "172.16.40.1 255.255.255.0" 
+    Name: VMWindowsServersFarm
+  Vlan 50: 
+    InterfaceIP: "172.16.50.1 255.255.255.0" 
+    Name: VMWindowsEnterpriseworkstation
+  Vlan 51: 
+    InterfaceIP: "172.16.51.1 255.255.255.0" 
+    Name: PhysicalWindowsWorkstation
+ 
+   
+
+leaf3:
+ HostName: leaf3
+ HostIPv4Address: "192.168.2.3" #Loopback int management interface
+ Interfaces:
+  LACPPortGroup1:
+   InterfaceRange: GigabitEthernet1/0/1-8
+   channelgroup: "3"
+   PortType: No switchport
+   IPV4Address: "10.0.1.10"
+   Netmask: " 255.255.255.252"
+   IPV6Address: FD29:611:608:1C::/64 eui 64
+   Description1: Etherchannel Connection to spine1
+  LACPPortGroup2:
+   InterfaceRange: GigabitEthernet1/0/17-31
+   channelgroup: "5"
+   PortType: No switchport
+   IPV4Address: "10.0.2.6"
+   Netmask: " 255.255.255.252"
+   IPV6Address: FFD29:611:608:2B::/64 eui 64
+   Description1: Etherchannel Connection to spine2
+ Dynamic Routing:
+  OSPF1:
+   OSPFprocessID: "1"
+   Area: "0"
+   ECMPmaximum-Paths: "2"
+ Vlans:
+  Vlan 10:
+   InterfaceIP: "172.16.10.1 255.255.255.0" 
+   Name: ManagementStation 
+  vlan 20: 
+   InterfaceIP: "172.16.20.1 255.255.255.0" 
+   Name: HypervisorsManagementESXi  
+  Vlan 30: 
+    InterfaceIP: "172.16.30.1 255.255.255.0" 
+    Name: PhysicalServeriLoManagement 
+  Vlan 40: 
+    InterfaceIP: "172.16.40.1 255.255.255.0" 
+    Name: VMWindowsServersFarm
+  Vlan 50: 
+    InterfaceIP: "172.16.50.1 255.255.255.0" 
+    Name: VMWindowsEnterpriseworkstation
+  Vlan 51: 
+    InterfaceIP: "172.16.51.1 255.255.255.0" 
+    Name: PhysicalWindowsWorkstation
+ 
